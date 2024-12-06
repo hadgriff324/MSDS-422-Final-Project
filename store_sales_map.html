@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_09608baf19a5a99eaa3454d97dedce2b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@main/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_09608baf19a5a99eaa3454d97dedce2b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_09608baf19a5a99eaa3454d97dedce2b = L.map(
+                "map_09608baf19a5a99eaa3454d97dedce2b",
+                {
+                    center: [-0.1807, -78.4678],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_73c59054f6104c10e35f3b2a4ebab8ad = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_73c59054f6104c10e35f3b2a4ebab8ad.addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+            var heat_map_541623a919ce06f98fd609b0bdfb2032 = L.heatLayer(
+                [[-0.2201641, -78.5123274, 14145012.8696541], [-0.2201641, -78.5123274, 21557388.6445642], [-0.2201641, -78.5123274, 50481910.185082], [-0.2201641, -78.5123274, 18909700.380001], [-0.2546212, -79.1686724, 15592404.5723532], [-0.2201641, -78.5123274, 25183679.997054], [-0.2201641, -78.5123274, 26952049.582971], [-0.2201641, -78.5123274, 30494286.928015], [-0.2201641, -78.5123274, 26409441.0647935], [-0.2201641, -78.5123274, 9613905.735863], [0.0251586, -77.9889555, 28325558.481396], [-0.9340311, -78.6145758, 10659217.957236], [-0.9340311, -78.6145758, 10523045.81794], [-1.6732765, -78.6482479, 11387918.748218], [0.51593695, -78.13294481410077, 11451270.022648], [-0.2546212, -79.1686724, 10986412.5547492], [-0.2201641, -78.5123274, 18030969.250161], [-0.2201641, -78.5123274, 13259375.6899043], [-1.4398571, -79.05766618235606, 13049509.836733], [-0.2201641, -78.5123274, 12920954.5928321], [-0.2546212, -79.1686724, 9255505.91021], [-1.4854777, -77.9969666, 4090201.7408], [-1.2422413, -78.6287594, 11651380.6749087], [-2.1900563, -79.8868741, 23767732.701713], [-2.2612497, -80.92379734420838, 11420997.8725745], [-2.1900563, -79.8868741, 7755121.8918648], [-1.92000685, -79.91293069792368, 19188021.3815342], [-2.1900563, -79.8868741, 18383154.8339259], [-2.1900563, -79.8868741, 9725157.696084], [-2.1900563, -79.8868741, 7382073.663963], [-1.8762599, -79.50689168949548, 17746872.701507], [-2.1900563, -79.8868741, 5951795.9975515], [-1.0669700500000001, -79.477681157267, 14178501.293449], [-2.1900563, -79.8868741, 17090734.15915], [-2.5937913000000004, -80.42614543228854, 7676679.4216696], [-1.8522205, -79.7604259, 15322431.096578], [-2.8974072, -79.0041726, 19970635.6144784], [-3.996845, -79.2016661, 18859999.2605296], [-2.8974072, -79.0041726, 20252192.53354], [-3.31489375, -79.95128044552303, 18395757.405968], [-3.31489375, -79.95128044552303, 14991039.1385844], [-2.8974072, -79.0041726, 8945767.8851627], [0.9668153, -79.6523847, 16391692.2119096], [-0.2201641, -78.5123274, 62087553.250089], [-0.2201641, -78.5123274, 54498010.416674], [-0.2201641, -78.5123274, 41896062.1216342], [-0.2201641, -78.5123274, 50948310.061006], [-0.2201641, -78.5123274, 35933130.2739365], [-0.2201641, -78.5123274, 43420095.783768], [-1.2422413, -78.6287594, 28653020.6246953], [-2.1900563, -79.8868741, 32911489.537604], [-1.0320192, -80.81711226232889, 2696169.733249], [-1.0320192, -80.81711226232889, 11216167.2826831], [-0.48095414999999997, -79.57415475430108, 11057483.1179049]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            );
+        
+    
+            heat_map_541623a919ce06f98fd609b0bdfb2032.addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+            var marker_fc9e5edb712aaa44f320fbeab42148c1 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_2dd112b8c5f4e8a500634e4ad323195b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44ff5027b2e7edad9d56c2d69b04f2be = $(`<div id="html_44ff5027b2e7edad9d56c2d69b04f2be" style="width: 100.0%; height: 100.0%;">Store Number: 1<br>Sales: 14145012.87</div>`)[0];
+                popup_2dd112b8c5f4e8a500634e4ad323195b.setContent(html_44ff5027b2e7edad9d56c2d69b04f2be);
+            
+        
+
+        marker_fc9e5edb712aaa44f320fbeab42148c1.bindPopup(popup_2dd112b8c5f4e8a500634e4ad323195b)
+        ;
+
+        
+    
+    
+            var marker_7f61511f40b9e4cc66f33b824608e8a7 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_ddb6ec0d1e3dbdd841ade35e7b4a5b69 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4469c783bbdd8af55937bd41765b5efb = $(`<div id="html_4469c783bbdd8af55937bd41765b5efb" style="width: 100.0%; height: 100.0%;">Store Number: 2<br>Sales: 21557388.64</div>`)[0];
+                popup_ddb6ec0d1e3dbdd841ade35e7b4a5b69.setContent(html_4469c783bbdd8af55937bd41765b5efb);
+            
+        
+
+        marker_7f61511f40b9e4cc66f33b824608e8a7.bindPopup(popup_ddb6ec0d1e3dbdd841ade35e7b4a5b69)
+        ;
+
+        
+    
+    
+            var marker_e9a13e251111fbe547c71703f2104e7e = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_07ff9e47792aa795da830653628efa79 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d0904c344f4fc8a0b09b1d52402f47f6 = $(`<div id="html_d0904c344f4fc8a0b09b1d52402f47f6" style="width: 100.0%; height: 100.0%;">Store Number: 3<br>Sales: 50481910.19</div>`)[0];
+                popup_07ff9e47792aa795da830653628efa79.setContent(html_d0904c344f4fc8a0b09b1d52402f47f6);
+            
+        
+
+        marker_e9a13e251111fbe547c71703f2104e7e.bindPopup(popup_07ff9e47792aa795da830653628efa79)
+        ;
+
+        
+    
+    
+            var marker_5b04e0f0f761e1242b1448a125061ca1 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_f08381e7de47b6d961116570b470d414 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c3176be1dead279e28f54c520bf7da7f = $(`<div id="html_c3176be1dead279e28f54c520bf7da7f" style="width: 100.0%; height: 100.0%;">Store Number: 4<br>Sales: 18909700.38</div>`)[0];
+                popup_f08381e7de47b6d961116570b470d414.setContent(html_c3176be1dead279e28f54c520bf7da7f);
+            
+        
+
+        marker_5b04e0f0f761e1242b1448a125061ca1.bindPopup(popup_f08381e7de47b6d961116570b470d414)
+        ;
+
+        
+    
+    
+            var marker_a4bd2b8891b7eda74ed4af5afa48c406 = L.marker(
+                [-0.2546212, -79.1686724],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_17603db8e6d0d26c334852ff3c9f5a39 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_320b9de856e75878d61f636d49ea5a38 = $(`<div id="html_320b9de856e75878d61f636d49ea5a38" style="width: 100.0%; height: 100.0%;">Store Number: 5<br>Sales: 15592404.57</div>`)[0];
+                popup_17603db8e6d0d26c334852ff3c9f5a39.setContent(html_320b9de856e75878d61f636d49ea5a38);
+            
+        
+
+        marker_a4bd2b8891b7eda74ed4af5afa48c406.bindPopup(popup_17603db8e6d0d26c334852ff3c9f5a39)
+        ;
+
+        
+    
+    
+            var marker_b56e7b5f15ecc8dc5620164e5ce87358 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_9f3e2a972491a736d4fcd0ef059e0cb6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79e5e12a83efe64e0c54191043dfb326 = $(`<div id="html_79e5e12a83efe64e0c54191043dfb326" style="width: 100.0%; height: 100.0%;">Store Number: 6<br>Sales: 25183680.00</div>`)[0];
+                popup_9f3e2a972491a736d4fcd0ef059e0cb6.setContent(html_79e5e12a83efe64e0c54191043dfb326);
+            
+        
+
+        marker_b56e7b5f15ecc8dc5620164e5ce87358.bindPopup(popup_9f3e2a972491a736d4fcd0ef059e0cb6)
+        ;
+
+        
+    
+    
+            var marker_d8cb566bfba015c03f862ae564406767 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_cb9b4db07621ceb966b086ec1d6e4e95 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cfe619c88fa13f65df50924c69fe3bc5 = $(`<div id="html_cfe619c88fa13f65df50924c69fe3bc5" style="width: 100.0%; height: 100.0%;">Store Number: 7<br>Sales: 26952049.58</div>`)[0];
+                popup_cb9b4db07621ceb966b086ec1d6e4e95.setContent(html_cfe619c88fa13f65df50924c69fe3bc5);
+            
+        
+
+        marker_d8cb566bfba015c03f862ae564406767.bindPopup(popup_cb9b4db07621ceb966b086ec1d6e4e95)
+        ;
+
+        
+    
+    
+            var marker_f12eb1b9f91df475eae73c301cf0f3e2 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_084671ddd3eb14f8a41a0b42b8fdf3d8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_835c72ebadc320724bf063871d0e8836 = $(`<div id="html_835c72ebadc320724bf063871d0e8836" style="width: 100.0%; height: 100.0%;">Store Number: 8<br>Sales: 30494286.93</div>`)[0];
+                popup_084671ddd3eb14f8a41a0b42b8fdf3d8.setContent(html_835c72ebadc320724bf063871d0e8836);
+            
+        
+
+        marker_f12eb1b9f91df475eae73c301cf0f3e2.bindPopup(popup_084671ddd3eb14f8a41a0b42b8fdf3d8)
+        ;
+
+        
+    
+    
+            var marker_13abd6c50117d8951a12c81f4c366be2 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_97e1298718da622a637c9cac13e3cc76 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_efd0ecafd2a8fd33d3f0a28ad4b1541d = $(`<div id="html_efd0ecafd2a8fd33d3f0a28ad4b1541d" style="width: 100.0%; height: 100.0%;">Store Number: 9<br>Sales: 26409441.06</div>`)[0];
+                popup_97e1298718da622a637c9cac13e3cc76.setContent(html_efd0ecafd2a8fd33d3f0a28ad4b1541d);
+            
+        
+
+        marker_13abd6c50117d8951a12c81f4c366be2.bindPopup(popup_97e1298718da622a637c9cac13e3cc76)
+        ;
+
+        
+    
+    
+            var marker_facec94e4a4423e5ab9e361b53b21351 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_92a51e19bd341be08006d2bd73be9bdc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dd2d39008063fa5d75992912d9178dec = $(`<div id="html_dd2d39008063fa5d75992912d9178dec" style="width: 100.0%; height: 100.0%;">Store Number: 10<br>Sales: 9613905.74</div>`)[0];
+                popup_92a51e19bd341be08006d2bd73be9bdc.setContent(html_dd2d39008063fa5d75992912d9178dec);
+            
+        
+
+        marker_facec94e4a4423e5ab9e361b53b21351.bindPopup(popup_92a51e19bd341be08006d2bd73be9bdc)
+        ;
+
+        
+    
+    
+            var marker_079f08d3be1ca197c394af76bae35e35 = L.marker(
+                [0.0251586, -77.9889555],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_1178cf0ecbc8d0dcd9a94fd61fcde452 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7175c216d63ec20c56d1a70b667b9f5b = $(`<div id="html_7175c216d63ec20c56d1a70b667b9f5b" style="width: 100.0%; height: 100.0%;">Store Number: 11<br>Sales: 28325558.48</div>`)[0];
+                popup_1178cf0ecbc8d0dcd9a94fd61fcde452.setContent(html_7175c216d63ec20c56d1a70b667b9f5b);
+            
+        
+
+        marker_079f08d3be1ca197c394af76bae35e35.bindPopup(popup_1178cf0ecbc8d0dcd9a94fd61fcde452)
+        ;
+
+        
+    
+    
+            var marker_d544de2348030f0dc1b41ce3701b9d90 = L.marker(
+                [-0.9340311, -78.6145758],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_ebc1a06e84a2a8ef8bc25dd506e53c09 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_25deb3b47292c8286bb69bf44f770676 = $(`<div id="html_25deb3b47292c8286bb69bf44f770676" style="width: 100.0%; height: 100.0%;">Store Number: 12<br>Sales: 10659217.96</div>`)[0];
+                popup_ebc1a06e84a2a8ef8bc25dd506e53c09.setContent(html_25deb3b47292c8286bb69bf44f770676);
+            
+        
+
+        marker_d544de2348030f0dc1b41ce3701b9d90.bindPopup(popup_ebc1a06e84a2a8ef8bc25dd506e53c09)
+        ;
+
+        
+    
+    
+            var marker_875c9775b2387df28fd5e08f335c0aa2 = L.marker(
+                [-0.9340311, -78.6145758],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_2de1e04e889c2c01464ef4dc66210153 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1033cabe88eec282a3c49a559a746b92 = $(`<div id="html_1033cabe88eec282a3c49a559a746b92" style="width: 100.0%; height: 100.0%;">Store Number: 13<br>Sales: 10523045.82</div>`)[0];
+                popup_2de1e04e889c2c01464ef4dc66210153.setContent(html_1033cabe88eec282a3c49a559a746b92);
+            
+        
+
+        marker_875c9775b2387df28fd5e08f335c0aa2.bindPopup(popup_2de1e04e889c2c01464ef4dc66210153)
+        ;
+
+        
+    
+    
+            var marker_88149aec5d37ae1cea4b634354404245 = L.marker(
+                [-1.6732765, -78.6482479],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_0446d86426782c5ae31288aa88013477 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2dc83ab3b9be2e82207a7ffaa3201ed5 = $(`<div id="html_2dc83ab3b9be2e82207a7ffaa3201ed5" style="width: 100.0%; height: 100.0%;">Store Number: 14<br>Sales: 11387918.75</div>`)[0];
+                popup_0446d86426782c5ae31288aa88013477.setContent(html_2dc83ab3b9be2e82207a7ffaa3201ed5);
+            
+        
+
+        marker_88149aec5d37ae1cea4b634354404245.bindPopup(popup_0446d86426782c5ae31288aa88013477)
+        ;
+
+        
+    
+    
+            var marker_f355ed687744d9f7e0679d7e3f42cc1a = L.marker(
+                [0.51593695, -78.13294481410077],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_257b9a3cd96ed134b496ad46501dfa68 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f659e751750d4a2e5ff4f2f5b034690 = $(`<div id="html_7f659e751750d4a2e5ff4f2f5b034690" style="width: 100.0%; height: 100.0%;">Store Number: 15<br>Sales: 11451270.02</div>`)[0];
+                popup_257b9a3cd96ed134b496ad46501dfa68.setContent(html_7f659e751750d4a2e5ff4f2f5b034690);
+            
+        
+
+        marker_f355ed687744d9f7e0679d7e3f42cc1a.bindPopup(popup_257b9a3cd96ed134b496ad46501dfa68)
+        ;
+
+        
+    
+    
+            var marker_28c52c54217fad6c77ffca05d431095e = L.marker(
+                [-0.2546212, -79.1686724],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_8035aff5fe37b12a3d2713ff2f99c398 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44e74fdf8a0c2725256b025e97a22921 = $(`<div id="html_44e74fdf8a0c2725256b025e97a22921" style="width: 100.0%; height: 100.0%;">Store Number: 16<br>Sales: 10986412.55</div>`)[0];
+                popup_8035aff5fe37b12a3d2713ff2f99c398.setContent(html_44e74fdf8a0c2725256b025e97a22921);
+            
+        
+
+        marker_28c52c54217fad6c77ffca05d431095e.bindPopup(popup_8035aff5fe37b12a3d2713ff2f99c398)
+        ;
+
+        
+    
+    
+            var marker_3821de352adb0e67430e63c4f7e39e16 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_8996d3019959d0765f10402444bf66c8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e602593ec83a12064e9b8f74d74c79d = $(`<div id="html_5e602593ec83a12064e9b8f74d74c79d" style="width: 100.0%; height: 100.0%;">Store Number: 17<br>Sales: 18030969.25</div>`)[0];
+                popup_8996d3019959d0765f10402444bf66c8.setContent(html_5e602593ec83a12064e9b8f74d74c79d);
+            
+        
+
+        marker_3821de352adb0e67430e63c4f7e39e16.bindPopup(popup_8996d3019959d0765f10402444bf66c8)
+        ;
+
+        
+    
+    
+            var marker_3d730b1ca80306e984e526b3517e3cde = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_d780654db2a1f637ea2635a1bf7e5a65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3be9ed8b26ee6c69643ebdab61d47c8d = $(`<div id="html_3be9ed8b26ee6c69643ebdab61d47c8d" style="width: 100.0%; height: 100.0%;">Store Number: 18<br>Sales: 13259375.69</div>`)[0];
+                popup_d780654db2a1f637ea2635a1bf7e5a65.setContent(html_3be9ed8b26ee6c69643ebdab61d47c8d);
+            
+        
+
+        marker_3d730b1ca80306e984e526b3517e3cde.bindPopup(popup_d780654db2a1f637ea2635a1bf7e5a65)
+        ;
+
+        
+    
+    
+            var marker_827d8ce6a9725064eecea132eeb99df4 = L.marker(
+                [-1.4398571, -79.05766618235606],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_3e08eba2345095c91e7e08ae7c5bcf77 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4dec82bce922f01b34cb42028ec8dc34 = $(`<div id="html_4dec82bce922f01b34cb42028ec8dc34" style="width: 100.0%; height: 100.0%;">Store Number: 19<br>Sales: 13049509.84</div>`)[0];
+                popup_3e08eba2345095c91e7e08ae7c5bcf77.setContent(html_4dec82bce922f01b34cb42028ec8dc34);
+            
+        
+
+        marker_827d8ce6a9725064eecea132eeb99df4.bindPopup(popup_3e08eba2345095c91e7e08ae7c5bcf77)
+        ;
+
+        
+    
+    
+            var marker_d386f2d88d6f9d91a43bdfcf1d3628bd = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_a3739a51b90b5a89f760bae8bb9f53a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79566759ce97b2ca3c0128cef898b562 = $(`<div id="html_79566759ce97b2ca3c0128cef898b562" style="width: 100.0%; height: 100.0%;">Store Number: 20<br>Sales: 12920954.59</div>`)[0];
+                popup_a3739a51b90b5a89f760bae8bb9f53a4.setContent(html_79566759ce97b2ca3c0128cef898b562);
+            
+        
+
+        marker_d386f2d88d6f9d91a43bdfcf1d3628bd.bindPopup(popup_a3739a51b90b5a89f760bae8bb9f53a4)
+        ;
+
+        
+    
+    
+            var marker_56f996a29815d29ac249466025fe3b92 = L.marker(
+                [-0.2546212, -79.1686724],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_cee4e1f9d5a5c711525d3f2f24e40eb7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_62c97c0ee5d17a82f2a635ffaa2bf078 = $(`<div id="html_62c97c0ee5d17a82f2a635ffaa2bf078" style="width: 100.0%; height: 100.0%;">Store Number: 21<br>Sales: 9255505.91</div>`)[0];
+                popup_cee4e1f9d5a5c711525d3f2f24e40eb7.setContent(html_62c97c0ee5d17a82f2a635ffaa2bf078);
+            
+        
+
+        marker_56f996a29815d29ac249466025fe3b92.bindPopup(popup_cee4e1f9d5a5c711525d3f2f24e40eb7)
+        ;
+
+        
+    
+    
+            var marker_7ff6b0908235bfd3dd5aef69a12a235d = L.marker(
+                [-1.4854777, -77.9969666],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_f93fbaa2692a6ac23d3da2e5771ed561 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2218d7c5f14929fc3328477f77f846dc = $(`<div id="html_2218d7c5f14929fc3328477f77f846dc" style="width: 100.0%; height: 100.0%;">Store Number: 22<br>Sales: 4090201.74</div>`)[0];
+                popup_f93fbaa2692a6ac23d3da2e5771ed561.setContent(html_2218d7c5f14929fc3328477f77f846dc);
+            
+        
+
+        marker_7ff6b0908235bfd3dd5aef69a12a235d.bindPopup(popup_f93fbaa2692a6ac23d3da2e5771ed561)
+        ;
+
+        
+    
+    
+            var marker_075b8fd815c4d42652223c5f24ea0b98 = L.marker(
+                [-1.2422413, -78.6287594],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_724a071e7811df4aab2766476d819318 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0a0541f9a4c87b699f8aca85027ae0af = $(`<div id="html_0a0541f9a4c87b699f8aca85027ae0af" style="width: 100.0%; height: 100.0%;">Store Number: 23<br>Sales: 11651380.67</div>`)[0];
+                popup_724a071e7811df4aab2766476d819318.setContent(html_0a0541f9a4c87b699f8aca85027ae0af);
+            
+        
+
+        marker_075b8fd815c4d42652223c5f24ea0b98.bindPopup(popup_724a071e7811df4aab2766476d819318)
+        ;
+
+        
+    
+    
+            var marker_0938160e101840e96554247250b76721 = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_dda97c78b350ca78be45b192aed3f029 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a5ed4ef6b0ff445071a4a2ef3b9f9d14 = $(`<div id="html_a5ed4ef6b0ff445071a4a2ef3b9f9d14" style="width: 100.0%; height: 100.0%;">Store Number: 24<br>Sales: 23767732.70</div>`)[0];
+                popup_dda97c78b350ca78be45b192aed3f029.setContent(html_a5ed4ef6b0ff445071a4a2ef3b9f9d14);
+            
+        
+
+        marker_0938160e101840e96554247250b76721.bindPopup(popup_dda97c78b350ca78be45b192aed3f029)
+        ;
+
+        
+    
+    
+            var marker_b8bf6192b83c4e7529558cc1d69507db = L.marker(
+                [-2.2612497, -80.92379734420838],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_4f070464ed8675754aa146ca722e2f23 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c44305fa6cc1efa9a5d59dfd4e53ba10 = $(`<div id="html_c44305fa6cc1efa9a5d59dfd4e53ba10" style="width: 100.0%; height: 100.0%;">Store Number: 25<br>Sales: 11420997.87</div>`)[0];
+                popup_4f070464ed8675754aa146ca722e2f23.setContent(html_c44305fa6cc1efa9a5d59dfd4e53ba10);
+            
+        
+
+        marker_b8bf6192b83c4e7529558cc1d69507db.bindPopup(popup_4f070464ed8675754aa146ca722e2f23)
+        ;
+
+        
+    
+    
+            var marker_42701289b991eb75a960e3b514587a90 = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_14dfff2cf1a2d62506a7c65c778bc07f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0543e3e3827d8e3f0c0175d887f381e8 = $(`<div id="html_0543e3e3827d8e3f0c0175d887f381e8" style="width: 100.0%; height: 100.0%;">Store Number: 26<br>Sales: 7755121.89</div>`)[0];
+                popup_14dfff2cf1a2d62506a7c65c778bc07f.setContent(html_0543e3e3827d8e3f0c0175d887f381e8);
+            
+        
+
+        marker_42701289b991eb75a960e3b514587a90.bindPopup(popup_14dfff2cf1a2d62506a7c65c778bc07f)
+        ;
+
+        
+    
+    
+            var marker_2d5acfd6506530c5871acb2ac77d97bd = L.marker(
+                [-1.92000685, -79.91293069792368],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_a38056b1023469ecff0555b2e02fb8f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_75875e92acf38fb54808a7682c8e35e0 = $(`<div id="html_75875e92acf38fb54808a7682c8e35e0" style="width: 100.0%; height: 100.0%;">Store Number: 27<br>Sales: 19188021.38</div>`)[0];
+                popup_a38056b1023469ecff0555b2e02fb8f4.setContent(html_75875e92acf38fb54808a7682c8e35e0);
+            
+        
+
+        marker_2d5acfd6506530c5871acb2ac77d97bd.bindPopup(popup_a38056b1023469ecff0555b2e02fb8f4)
+        ;
+
+        
+    
+    
+            var marker_c5645a360a97af81341451a466ea62e4 = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_2701afe63df991de69731caf1c3eff22 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eefd355aef71a0091b552d1ec3ba2002 = $(`<div id="html_eefd355aef71a0091b552d1ec3ba2002" style="width: 100.0%; height: 100.0%;">Store Number: 28<br>Sales: 18383154.83</div>`)[0];
+                popup_2701afe63df991de69731caf1c3eff22.setContent(html_eefd355aef71a0091b552d1ec3ba2002);
+            
+        
+
+        marker_c5645a360a97af81341451a466ea62e4.bindPopup(popup_2701afe63df991de69731caf1c3eff22)
+        ;
+
+        
+    
+    
+            var marker_26cf760131b485a51af05ea4538c5d9f = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_9016f1ba0abcb6974072fd85dec8fe8b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_91470c9f293f71752f268117768a5dea = $(`<div id="html_91470c9f293f71752f268117768a5dea" style="width: 100.0%; height: 100.0%;">Store Number: 29<br>Sales: 9725157.70</div>`)[0];
+                popup_9016f1ba0abcb6974072fd85dec8fe8b.setContent(html_91470c9f293f71752f268117768a5dea);
+            
+        
+
+        marker_26cf760131b485a51af05ea4538c5d9f.bindPopup(popup_9016f1ba0abcb6974072fd85dec8fe8b)
+        ;
+
+        
+    
+    
+            var marker_e3a7979dd0cbba9e7f03d38862d1f730 = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_a1cee6fba57db62039b77cbd99c3db19 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b4443a99d4408557eeb5197237b0913b = $(`<div id="html_b4443a99d4408557eeb5197237b0913b" style="width: 100.0%; height: 100.0%;">Store Number: 30<br>Sales: 7382073.66</div>`)[0];
+                popup_a1cee6fba57db62039b77cbd99c3db19.setContent(html_b4443a99d4408557eeb5197237b0913b);
+            
+        
+
+        marker_e3a7979dd0cbba9e7f03d38862d1f730.bindPopup(popup_a1cee6fba57db62039b77cbd99c3db19)
+        ;
+
+        
+    
+    
+            var marker_82f1caec3f329ce031e7d883d847711d = L.marker(
+                [-1.8762599, -79.50689168949548],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_c4fdb505533f69753b6eb0a89e3e1727 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_763c55a45772724c12393613a36037ae = $(`<div id="html_763c55a45772724c12393613a36037ae" style="width: 100.0%; height: 100.0%;">Store Number: 31<br>Sales: 17746872.70</div>`)[0];
+                popup_c4fdb505533f69753b6eb0a89e3e1727.setContent(html_763c55a45772724c12393613a36037ae);
+            
+        
+
+        marker_82f1caec3f329ce031e7d883d847711d.bindPopup(popup_c4fdb505533f69753b6eb0a89e3e1727)
+        ;
+
+        
+    
+    
+            var marker_307d0c4ba8004b6c97bf8c8e43bd5135 = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_8d61277f79475a785f99e44c2ea89941 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1c6746ab26b80544c69e5a007c07e6c4 = $(`<div id="html_1c6746ab26b80544c69e5a007c07e6c4" style="width: 100.0%; height: 100.0%;">Store Number: 32<br>Sales: 5951796.00</div>`)[0];
+                popup_8d61277f79475a785f99e44c2ea89941.setContent(html_1c6746ab26b80544c69e5a007c07e6c4);
+            
+        
+
+        marker_307d0c4ba8004b6c97bf8c8e43bd5135.bindPopup(popup_8d61277f79475a785f99e44c2ea89941)
+        ;
+
+        
+    
+    
+            var marker_5fb3c18ed4bda1686db24be872a167e6 = L.marker(
+                [-1.0669700500000001, -79.477681157267],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_c9d6a314d9b34bca450c8e7d6aaa3c45 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_201016b2b91bec24156a86ad1730187b = $(`<div id="html_201016b2b91bec24156a86ad1730187b" style="width: 100.0%; height: 100.0%;">Store Number: 33<br>Sales: 14178501.29</div>`)[0];
+                popup_c9d6a314d9b34bca450c8e7d6aaa3c45.setContent(html_201016b2b91bec24156a86ad1730187b);
+            
+        
+
+        marker_5fb3c18ed4bda1686db24be872a167e6.bindPopup(popup_c9d6a314d9b34bca450c8e7d6aaa3c45)
+        ;
+
+        
+    
+    
+            var marker_58a391c39754642d3e314af1002f73c6 = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_13089243d5e5c1ef153dd8a8c306e580 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b517f21a2eaa1d540c5c70cdd124e649 = $(`<div id="html_b517f21a2eaa1d540c5c70cdd124e649" style="width: 100.0%; height: 100.0%;">Store Number: 34<br>Sales: 17090734.16</div>`)[0];
+                popup_13089243d5e5c1ef153dd8a8c306e580.setContent(html_b517f21a2eaa1d540c5c70cdd124e649);
+            
+        
+
+        marker_58a391c39754642d3e314af1002f73c6.bindPopup(popup_13089243d5e5c1ef153dd8a8c306e580)
+        ;
+
+        
+    
+    
+            var marker_a8dcb7c7b21baa095cdec598943f832e = L.marker(
+                [-2.5937913000000004, -80.42614543228854],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_3683f6e82369cb7a242544795855bef4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eb0e041e66cba7df78e91af264485d6e = $(`<div id="html_eb0e041e66cba7df78e91af264485d6e" style="width: 100.0%; height: 100.0%;">Store Number: 35<br>Sales: 7676679.42</div>`)[0];
+                popup_3683f6e82369cb7a242544795855bef4.setContent(html_eb0e041e66cba7df78e91af264485d6e);
+            
+        
+
+        marker_a8dcb7c7b21baa095cdec598943f832e.bindPopup(popup_3683f6e82369cb7a242544795855bef4)
+        ;
+
+        
+    
+    
+            var marker_075cfdefed7340da3e78ecdd825102b9 = L.marker(
+                [-1.8522205, -79.7604259],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_702b4ca4f3950bbe7d8a0c61420d6c48 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4cce60c79b3359d798992021d5ee2ccf = $(`<div id="html_4cce60c79b3359d798992021d5ee2ccf" style="width: 100.0%; height: 100.0%;">Store Number: 36<br>Sales: 15322431.10</div>`)[0];
+                popup_702b4ca4f3950bbe7d8a0c61420d6c48.setContent(html_4cce60c79b3359d798992021d5ee2ccf);
+            
+        
+
+        marker_075cfdefed7340da3e78ecdd825102b9.bindPopup(popup_702b4ca4f3950bbe7d8a0c61420d6c48)
+        ;
+
+        
+    
+    
+            var marker_da9dd6ba195ea895b3d5e26052f0e7ae = L.marker(
+                [-2.8974072, -79.0041726],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_3b3aaa72baa20acdeabecef006bdba55 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_db045654380b1f71a9929ba80292de02 = $(`<div id="html_db045654380b1f71a9929ba80292de02" style="width: 100.0%; height: 100.0%;">Store Number: 37<br>Sales: 19970635.61</div>`)[0];
+                popup_3b3aaa72baa20acdeabecef006bdba55.setContent(html_db045654380b1f71a9929ba80292de02);
+            
+        
+
+        marker_da9dd6ba195ea895b3d5e26052f0e7ae.bindPopup(popup_3b3aaa72baa20acdeabecef006bdba55)
+        ;
+
+        
+    
+    
+            var marker_6248b03c39e9b0ee176f96922970a807 = L.marker(
+                [-3.996845, -79.2016661],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_de20fffcbf9b4bd233b0f3455883dc67 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bf8417e4fc8bab97791579b5a4d5a348 = $(`<div id="html_bf8417e4fc8bab97791579b5a4d5a348" style="width: 100.0%; height: 100.0%;">Store Number: 38<br>Sales: 18859999.26</div>`)[0];
+                popup_de20fffcbf9b4bd233b0f3455883dc67.setContent(html_bf8417e4fc8bab97791579b5a4d5a348);
+            
+        
+
+        marker_6248b03c39e9b0ee176f96922970a807.bindPopup(popup_de20fffcbf9b4bd233b0f3455883dc67)
+        ;
+
+        
+    
+    
+            var marker_0252c8df0c025c96563bb3a4e66c9ecb = L.marker(
+                [-2.8974072, -79.0041726],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_8d61926de85d971a56322bea67666558 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7a3fee04862c0a17084adc9af3287326 = $(`<div id="html_7a3fee04862c0a17084adc9af3287326" style="width: 100.0%; height: 100.0%;">Store Number: 39<br>Sales: 20252192.53</div>`)[0];
+                popup_8d61926de85d971a56322bea67666558.setContent(html_7a3fee04862c0a17084adc9af3287326);
+            
+        
+
+        marker_0252c8df0c025c96563bb3a4e66c9ecb.bindPopup(popup_8d61926de85d971a56322bea67666558)
+        ;
+
+        
+    
+    
+            var marker_9d5ea5edbb6bb5d4cd12308bb27fdbac = L.marker(
+                [-3.31489375, -79.95128044552303],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_fa0dbf6c26feb3c55550bfee0b9fa175 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d3aa7814c09762cc94a996d2e369282c = $(`<div id="html_d3aa7814c09762cc94a996d2e369282c" style="width: 100.0%; height: 100.0%;">Store Number: 40<br>Sales: 18395757.41</div>`)[0];
+                popup_fa0dbf6c26feb3c55550bfee0b9fa175.setContent(html_d3aa7814c09762cc94a996d2e369282c);
+            
+        
+
+        marker_9d5ea5edbb6bb5d4cd12308bb27fdbac.bindPopup(popup_fa0dbf6c26feb3c55550bfee0b9fa175)
+        ;
+
+        
+    
+    
+            var marker_37b0d28e887f9fe9bf9671cac3690c78 = L.marker(
+                [-3.31489375, -79.95128044552303],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_7fbcbf2641ed1e13ce48e120acb03c52 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63c09407b09c424a71b87b86d3f1920e = $(`<div id="html_63c09407b09c424a71b87b86d3f1920e" style="width: 100.0%; height: 100.0%;">Store Number: 41<br>Sales: 14991039.14</div>`)[0];
+                popup_7fbcbf2641ed1e13ce48e120acb03c52.setContent(html_63c09407b09c424a71b87b86d3f1920e);
+            
+        
+
+        marker_37b0d28e887f9fe9bf9671cac3690c78.bindPopup(popup_7fbcbf2641ed1e13ce48e120acb03c52)
+        ;
+
+        
+    
+    
+            var marker_bbdd0a78335280548241f7bc247ad1c7 = L.marker(
+                [-2.8974072, -79.0041726],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_d9408969085bb3791b2411ddaee106ae = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fa234591d16bd26503093b610e2957bc = $(`<div id="html_fa234591d16bd26503093b610e2957bc" style="width: 100.0%; height: 100.0%;">Store Number: 42<br>Sales: 8945767.89</div>`)[0];
+                popup_d9408969085bb3791b2411ddaee106ae.setContent(html_fa234591d16bd26503093b610e2957bc);
+            
+        
+
+        marker_bbdd0a78335280548241f7bc247ad1c7.bindPopup(popup_d9408969085bb3791b2411ddaee106ae)
+        ;
+
+        
+    
+    
+            var marker_f67b96bc55e96f211fd590422cc5e4a1 = L.marker(
+                [0.9668153, -79.6523847],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_5e222388d9ea29ff771d40f7e1fabf8f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_caa95b6f0bf4105e98e1b08050d028cf = $(`<div id="html_caa95b6f0bf4105e98e1b08050d028cf" style="width: 100.0%; height: 100.0%;">Store Number: 43<br>Sales: 16391692.21</div>`)[0];
+                popup_5e222388d9ea29ff771d40f7e1fabf8f.setContent(html_caa95b6f0bf4105e98e1b08050d028cf);
+            
+        
+
+        marker_f67b96bc55e96f211fd590422cc5e4a1.bindPopup(popup_5e222388d9ea29ff771d40f7e1fabf8f)
+        ;
+
+        
+    
+    
+            var marker_7f5407459b7500db4ac08e1fda35e8f7 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_3619f3546b7a251adcceb5a3e5bb45cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_63db10e16d9fcceb3449e1e1cd03cfdc = $(`<div id="html_63db10e16d9fcceb3449e1e1cd03cfdc" style="width: 100.0%; height: 100.0%;">Store Number: 44<br>Sales: 62087553.25</div>`)[0];
+                popup_3619f3546b7a251adcceb5a3e5bb45cb.setContent(html_63db10e16d9fcceb3449e1e1cd03cfdc);
+            
+        
+
+        marker_7f5407459b7500db4ac08e1fda35e8f7.bindPopup(popup_3619f3546b7a251adcceb5a3e5bb45cb)
+        ;
+
+        
+    
+    
+            var marker_e4745a9b3399c68236d3e87ef6178536 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_1e1ea884360462b13dace510d0c269b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5f2ec44b86c30a65c472f756ce1915cc = $(`<div id="html_5f2ec44b86c30a65c472f756ce1915cc" style="width: 100.0%; height: 100.0%;">Store Number: 45<br>Sales: 54498010.42</div>`)[0];
+                popup_1e1ea884360462b13dace510d0c269b4.setContent(html_5f2ec44b86c30a65c472f756ce1915cc);
+            
+        
+
+        marker_e4745a9b3399c68236d3e87ef6178536.bindPopup(popup_1e1ea884360462b13dace510d0c269b4)
+        ;
+
+        
+    
+    
+            var marker_7603a40ecfbc946e73663a62c3bf646f = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_50692ae13650b27e1f05ecbf7217d2c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f28ea9dc1cd6002edc582e3582446f5 = $(`<div id="html_1f28ea9dc1cd6002edc582e3582446f5" style="width: 100.0%; height: 100.0%;">Store Number: 46<br>Sales: 41896062.12</div>`)[0];
+                popup_50692ae13650b27e1f05ecbf7217d2c2.setContent(html_1f28ea9dc1cd6002edc582e3582446f5);
+            
+        
+
+        marker_7603a40ecfbc946e73663a62c3bf646f.bindPopup(popup_50692ae13650b27e1f05ecbf7217d2c2)
+        ;
+
+        
+    
+    
+            var marker_55857395284e2662c0407f01bc2794eb = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_cf574513a8599eda519ada24fdbcb4d9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c26b1fcaf1e05d3b4d080841cea2e374 = $(`<div id="html_c26b1fcaf1e05d3b4d080841cea2e374" style="width: 100.0%; height: 100.0%;">Store Number: 47<br>Sales: 50948310.06</div>`)[0];
+                popup_cf574513a8599eda519ada24fdbcb4d9.setContent(html_c26b1fcaf1e05d3b4d080841cea2e374);
+            
+        
+
+        marker_55857395284e2662c0407f01bc2794eb.bindPopup(popup_cf574513a8599eda519ada24fdbcb4d9)
+        ;
+
+        
+    
+    
+            var marker_cbb411695f351515492de3511322e4e0 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_e2810b373fba145f892b6d7516c7a354 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1c9fa2146f1d033ff46327a96fe93fe6 = $(`<div id="html_1c9fa2146f1d033ff46327a96fe93fe6" style="width: 100.0%; height: 100.0%;">Store Number: 48<br>Sales: 35933130.27</div>`)[0];
+                popup_e2810b373fba145f892b6d7516c7a354.setContent(html_1c9fa2146f1d033ff46327a96fe93fe6);
+            
+        
+
+        marker_cbb411695f351515492de3511322e4e0.bindPopup(popup_e2810b373fba145f892b6d7516c7a354)
+        ;
+
+        
+    
+    
+            var marker_d04faca950538837aa50d6d64a7ffd33 = L.marker(
+                [-0.2201641, -78.5123274],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_f7784cf55dac8344f49210485dbb3729 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1a3174562bc48b1bb9f0287c1b9adedd = $(`<div id="html_1a3174562bc48b1bb9f0287c1b9adedd" style="width: 100.0%; height: 100.0%;">Store Number: 49<br>Sales: 43420095.78</div>`)[0];
+                popup_f7784cf55dac8344f49210485dbb3729.setContent(html_1a3174562bc48b1bb9f0287c1b9adedd);
+            
+        
+
+        marker_d04faca950538837aa50d6d64a7ffd33.bindPopup(popup_f7784cf55dac8344f49210485dbb3729)
+        ;
+
+        
+    
+    
+            var marker_6629bbf679cc785fa8ae5733bc4e7c3a = L.marker(
+                [-1.2422413, -78.6287594],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_9e1fed4460977ae94758e111465e6c35 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5354417e4a380371a4d0e063f3413f06 = $(`<div id="html_5354417e4a380371a4d0e063f3413f06" style="width: 100.0%; height: 100.0%;">Store Number: 50<br>Sales: 28653020.62</div>`)[0];
+                popup_9e1fed4460977ae94758e111465e6c35.setContent(html_5354417e4a380371a4d0e063f3413f06);
+            
+        
+
+        marker_6629bbf679cc785fa8ae5733bc4e7c3a.bindPopup(popup_9e1fed4460977ae94758e111465e6c35)
+        ;
+
+        
+    
+    
+            var marker_f5cba345b7a0c1842139e78965846f6d = L.marker(
+                [-2.1900563, -79.8868741],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_576b2cafbc5427d57ae33de5e46ec164 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_76465bf283818e3d59521d1f3ae830a3 = $(`<div id="html_76465bf283818e3d59521d1f3ae830a3" style="width: 100.0%; height: 100.0%;">Store Number: 51<br>Sales: 32911489.54</div>`)[0];
+                popup_576b2cafbc5427d57ae33de5e46ec164.setContent(html_76465bf283818e3d59521d1f3ae830a3);
+            
+        
+
+        marker_f5cba345b7a0c1842139e78965846f6d.bindPopup(popup_576b2cafbc5427d57ae33de5e46ec164)
+        ;
+
+        
+    
+    
+            var marker_18f4a1f59c6aba3c8feb64cb2a4c5939 = L.marker(
+                [-1.0320192, -80.81711226232889],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_7fbf9828588de6748f60c547720474d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fd4140e3956e7475c177d3088e4d110a = $(`<div id="html_fd4140e3956e7475c177d3088e4d110a" style="width: 100.0%; height: 100.0%;">Store Number: 52<br>Sales: 2696169.73</div>`)[0];
+                popup_7fbf9828588de6748f60c547720474d6.setContent(html_fd4140e3956e7475c177d3088e4d110a);
+            
+        
+
+        marker_18f4a1f59c6aba3c8feb64cb2a4c5939.bindPopup(popup_7fbf9828588de6748f60c547720474d6)
+        ;
+
+        
+    
+    
+            var marker_00f6e40f36262647548ff4e0864cecc4 = L.marker(
+                [-1.0320192, -80.81711226232889],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_274668b51e3d81b961ef857cdef07c42 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0aa92a33938d2951cf762f8576475eec = $(`<div id="html_0aa92a33938d2951cf762f8576475eec" style="width: 100.0%; height: 100.0%;">Store Number: 53<br>Sales: 11216167.28</div>`)[0];
+                popup_274668b51e3d81b961ef857cdef07c42.setContent(html_0aa92a33938d2951cf762f8576475eec);
+            
+        
+
+        marker_00f6e40f36262647548ff4e0864cecc4.bindPopup(popup_274668b51e3d81b961ef857cdef07c42)
+        ;
+
+        
+    
+    
+            var marker_a163608795a4521658dbd12d40657760 = L.marker(
+                [-0.48095414999999997, -79.57415475430108],
+                {}
+            ).addTo(map_09608baf19a5a99eaa3454d97dedce2b);
+        
+    
+        var popup_8519392cccb935991a1c1ac657e541b4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b694cdbeda5bdad23b1a67b19af8adbb = $(`<div id="html_b694cdbeda5bdad23b1a67b19af8adbb" style="width: 100.0%; height: 100.0%;">Store Number: 54<br>Sales: 11057483.12</div>`)[0];
+                popup_8519392cccb935991a1c1ac657e541b4.setContent(html_b694cdbeda5bdad23b1a67b19af8adbb);
+            
+        
+
+        marker_a163608795a4521658dbd12d40657760.bindPopup(popup_8519392cccb935991a1c1ac657e541b4)
+        ;
+
+        
+    
+</script>
+</html>
